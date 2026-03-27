@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TITRES */
+.game-title {
+    margin-top: 20px;
+    font-size: 36px;
+    color: #00ffcc;
+    text-shadow: 
+        0 0 5px #00ffcc,
+        0 0 10px #00ffcc,
+        0 0 20px #008866;
+    font-family: monospace;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+/* LISTE JOUEURS */
+.player-list {
+    width: 300px;
+}
+
+/* CARTE JOUEUR */
+.player-card {
+    border: 2px solid #555;
+    background: #222;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* TEXTE MORT */
+.dead {
+    color: red;
+}
+
+/* FORM CREATE */
+.create-player {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* INPUT */
+input {
+    padding: 8px;
+    background: #222;
+    border: 1px solid #555;
+    color: white;
+}
+
+/* BUTTON */
+button {
+    padding: 8px 12px;
+    background: #333;
+    color: white;
+    border: 1px solid #777;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}

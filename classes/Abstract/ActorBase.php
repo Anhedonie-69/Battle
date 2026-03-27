@@ -12,6 +12,10 @@ abstract class ActorBase
     private int $velocity;
     private float $currentTime;
 
+    private bool $isDead = false;
+
+    private Skills $skills;
+
     public function __construct(
         string $name,
         int $maxHp,
@@ -21,7 +25,8 @@ abstract class ActorBase
         int $atk,
         int $def,
         int $velocity,
-        float $currentTime
+        float $currentTime,
+        bool $isDead
         )
     {
         $this->setName($name);
@@ -33,6 +38,9 @@ abstract class ActorBase
         $this->setDef($def);
         $this->setVelocity($velocity);
         $this->setCurrentTime($currentTime);
+        $this->setIsDead($isDead);
+
+        $this->skills = new Skills();
     }
 
     // GET & SET
@@ -63,6 +71,9 @@ abstract class ActorBase
 
     public function setCurrentHp(int $hp)
     {
+        if($hp < 0){
+            $this->currentHp = 0;
+        }
         $this->currentHp = $hp;
     }
 
@@ -126,8 +137,30 @@ abstract class ActorBase
         $this->currentTime = $time;
     }
 
+    public function getIsDead()
+    {
+        return $this->isDead;
+    }
+
+    public function setIsDead($isDead)
+    {
+        $this->isDead = $isDead;
+    }
+
+    public function getSkills()
+    {
+        return $this->skills;
+    }
+
     // METHODS
-    public function hit(){}
+    
+    public function takeDamage(int $amount)
+    {
+        $this->currentHp = max(0, $this->currentHp - $amount);
+        if ($this->getCurrentHp() === 0){
+            $this->setIsDead(true);
+        }
+    }
 }
 
 ?>

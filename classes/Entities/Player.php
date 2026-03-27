@@ -3,7 +3,7 @@
 class Player extends ActorBase
 {
     private $id;
-    private bool $isDead;
+
     private $stats = [
         'maxHp' => 10,
         'maxMp' => 5,
@@ -25,8 +25,11 @@ class Player extends ActorBase
             $this->stats['atk'],
             $this->stats['def'],
             $this->stats['velocity'],
-            0 // currentTime
+            0, // currentTime
+            $isDead
         );
+        $this->getSkills()->addSkill(new AttackSkill());
+        $this->getSkills()->addSkill(new MagicSkill());
     }
 
     public function getId()

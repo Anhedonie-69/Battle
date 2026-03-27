@@ -37,6 +37,9 @@ spl_autoload_register(function ($className) {
         case substr($className, -7) === 'Service':
             $directory = 'Services';
             break;
+        case substr($className, -5) === 'Skill':
+            $directory = 'Skills';
+            break;
         default:
             $directory = 'Entities';
             break;

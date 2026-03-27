@@ -11,7 +11,8 @@ class EnemyBase extends ActorBase
         int $atk,
         int $def,
         int $velocity,
-        float $currentTime
+        float $currentTime,
+        bool $isDead
         )
     {
         parent::__construct(
@@ -23,7 +24,8 @@ class EnemyBase extends ActorBase
             $atk,
             $def,
             $velocity,
-            $currentTime
+            $currentTime,
+            $isDead
         );
     }
 }

@@ -6,7 +6,7 @@ class GobelinEnemy extends EnemyBase
         'maxHp' => 10,
         'maxMp' => 5,
         'atk' => 8,
-        'def' => 6,
+        'def' => 5,
         'velocity' => 8
     ];
 
@@ -21,8 +21,10 @@ class GobelinEnemy extends EnemyBase
             $this->stats['atk'],
             $this->stats['def'],
             $this->stats['velocity'],
-            0 // currentTime
+            0, // currentTime
+            false
             );
+        $this->getSkills()->addSkill(new AttackSkill());
     }
 }
 

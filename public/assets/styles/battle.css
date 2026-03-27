@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* LOG */
+.battle-log {
+    border: 2px solid #555;
+    padding: 10px;
+    width: 80%;
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    background: black;
+    color: lime;
+    font-family: monospace;
+}
+
+/* CONTAINER */
+.battle-container {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+/* ACTORS */
+.actor {
+    border: 2px solid #555;
+    padding: 10px;
+    width: 150px;
+    background: #222;
+    text-align: center;
+}
+
+.enemy {
+    border-color: red;
+}
+
+.player {
+    border-color: cyan;
+}
+
+/* HP BAR */
+.hp-bar {
+    background: #444;
+    width: 100%;
+    height: 10px;
+    margin: 5px 0;
+}
+
+.hp-fill {
+    background: red;
+    height: 10px;
+}
+
+/* BUTTONS */
+.actions button {
+    padding: 10px 20px;
+    margin: 5px;
+    background: #333;
+    color: white;
+    border: 1px solid #777;
+    cursor: pointer;
+}
+
+.actions button:hover {
+    background: #555;
+}
